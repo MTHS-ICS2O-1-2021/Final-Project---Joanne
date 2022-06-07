@@ -4,17 +4,17 @@
 //
 // Created by: Joanne Santhosh
 // Created on: June 2022
-// This is the Cookie Monster configuration file
+// This is the Phaser configuration file
 
-// scene import
+// scene import statements
 import SplashScene from './splashScene.js'
+import TitleScene from './titleScene.js'
 
-// create new scene
-const splashScene = new splashScene
+// Our game scene
+const splashScene = new SplashScene()
+const titleScene = new TitleScene()
 
-/**
- * Start Cookie Monster Game
- */
+//* Game scene */
 const config = {
   type: Phaser.AUTO, 
   width: 1920,
@@ -22,11 +22,11 @@ const config = {
    physics: {
     default: 'arcade',
     arcade: {
-      debug: false
+      debug: true
     }
   },
   // set background color
-  backgroundColor: 0xffffff,
+  backgroundColor: 0x5f6e7a,
   scale: {
     mode: Phaser.Scale.FIT,
     // we place it in the middle of the page.
@@ -35,8 +35,11 @@ const config = {
 }
 
 const game = new Phaser.Game(config)
-game.scene.add("splashScene", splashScene)
 
-// start scene
-game.scene.start("splashScene")
-console.log(game)
+// load scenes
+// NOTE: remember any "key" is global and CAN NOT be reused!
+game.scene.add("splashScene", splashScene)
+game.scene.add("titleScene", titleScene)
+
+// start title
+game.scene.start('splashScene')
