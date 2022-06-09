@@ -7,14 +7,14 @@
 // This is the Phaser configuration file
 
 // scene import statements
-import SplashScene from "./splashScene.js";
-import TitleScene from "./titleScene.js";
-import MenuScene from "./menuScene.js";
+import SplashScene from "./splashScene.js"
+import TitleScene from "./titleScene.js"
+import MenuScene from "./menuScene.js"
 
 // Our game scene
-const splashScene = new SplashScene();
-const titleScene = new TitleScene();
-const menuScene = new MenuScene();
+const splashScene = new SplashScene()
+const titleScene = new TitleScene()
+const menuScene = new MenuScene()
 
 //* Game scene */
 const config = {
@@ -34,15 +34,15 @@ const config = {
     // we place it in the middle of the page.
     autoCenter: Phaser.Scale.CENTER_BOTH,
   },
-};
+}
 
 const game = new Phaser.Game(config);
 
 // load scenes
 // NOTE: remember any "key" is global and CAN NOT be reused!
-game.scene.add("splashScene", splashScene);
-game.scene.add("titleScene", titleScene);
-game.scene.add("menuScene", menuScene);
+game.scene.add("splashScene", splashScene)
+game.scene.add("titleScene", titleScene)
+game.scene.add("menuScene", menuScene)
 
 // start title
-game.scene.start("splashScene");
+game.scene.start("splashScene")
