@@ -43,7 +43,10 @@ class TitleScene extends Phaser.Scene {
    */
   preload() {
     console.log("Title Scene")
-    this.load.image("titleSceneBackground", "assets/Screen Shot 2022-06-08 at 6.22.32 PM.png")
+    this.load.image(
+      "titleSceneBackground", 
+      "assets/Screen Shot 2022-06-08 at 6.22.32 PM.png"
+    )
   }
 
   /**
@@ -56,7 +59,9 @@ class TitleScene extends Phaser.Scene {
     this.titleSceneBackgroundImage.x = 1920 / 2
     this.titleSceneBackgroundImage.y = 1080 / 2
 
-     this.titleSceneText = this.add.text(1920 / 2, 1080 / 2, "Cookie Monster!", this.titleSceneTextStyle).setOrigin(0.5)
+     this.titleSceneText = this.add
+       .text(1920 / 2, 1080 / 2, "Cookie Monster!", this.titleSceneTextStyle)
+       .setOrigin(0.5)
   }
 
   /**

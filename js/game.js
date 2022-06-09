@@ -36,7 +36,7 @@ const config = {
   },
 }
 
-const game = new Phaser.Game(config);
+const game = new Phaser.Game(config)
 
 // load scenes
 // NOTE: remember any "key" is global and CAN NOT be reused!
