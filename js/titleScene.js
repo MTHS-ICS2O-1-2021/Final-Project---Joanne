@@ -55,13 +55,15 @@ class TitleScene extends Phaser.Scene {
    * @param {object} data - Any data passed via ScenePlugin.add() or ScenePlugin.start().
    */
   create(data) {
-    this.titleSceneBackgroundImage = this.add.sprite(0, 0, "titleSceneBackground").setScale(2.75)
+    this.titleSceneBackgroundImage = this.add
+      .sprite(0, 0, "titleSceneBackground")
+      .setScale(2.75)
     this.titleSceneBackgroundImage.x = 1920 / 2
     this.titleSceneBackgroundImage.y = 1080 / 2
 
-     this.titleSceneText = this.add
-       .text(1920 / 2, 1080 / 2, "Cookie Monster!", this.titleSceneTextStyle)
-       .setOrigin(0.5)
+    this.titleSceneText = this.add
+      .text(1920 / 2, 1080 / 2, "Cookie Monster!", this.titleSceneTextStyle)
+      .setOrigin(0.5)
   }
 
   /**
