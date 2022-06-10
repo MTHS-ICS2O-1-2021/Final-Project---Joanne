@@ -68,8 +68,7 @@ class MenuScene extends Phaser.Scene {
    */
   update(time, delta) {}
 
-  // game scene
-  clickButton() {
+   clickButton() {
     this.scene.start("gameScene")
   }
 }
