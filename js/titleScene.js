@@ -22,7 +22,7 @@ class TitleScene extends Phaser.Scene {
       font: "200px Times",
       fill: "#fde4b9",
       align: "center",
-    };
+    }
   }
 
   /**
@@ -44,7 +44,7 @@ class TitleScene extends Phaser.Scene {
     this.load.image(
       "titleSceneBackground",
       "assets/Screen Shot 2022-06-08 at 6.22.32 PM.png"
-    );
+    )
   }
 
   /**

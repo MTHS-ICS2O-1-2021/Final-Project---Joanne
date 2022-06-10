@@ -36,9 +36,9 @@ const config = {
     // we place it in the middle of the page.
     autoCenter: Phaser.Scale.CENTER_BOTH,
   },
-};
+}
 
-const game = new Phaser.Game(config);
+const game = new Phaser.Game(config)
 
 // load scenes
 // NOTE: remember any "key" is global and CAN NOT be reused!
