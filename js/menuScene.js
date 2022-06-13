@@ -66,10 +66,13 @@ class MenuScene extends Phaser.Scene {
    *  @param {number} time - The current time.
    *  @param {number} delta - The delta time in ms since the last frame.
    */
-  update(time, delta) {}
+  update(time, delta) {
+  }
 
-  // this is the code for the button function
-  clickButton() {
+   /**
+   * The code for the start button
+   */
+   clickButton() {
     this.scene.start("gameScene")
   }
 }
