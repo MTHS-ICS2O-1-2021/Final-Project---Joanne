@@ -17,7 +17,7 @@ class GameScene extends Phaser.Scene {
     super({ key: "gameScene" })
 
     this.background = null
-    this.ship = null
+    this.cookieMonster = null
   }
 
   /**
@@ -40,7 +40,6 @@ class GameScene extends Phaser.Scene {
     // images
     this.load.image("gameBackground", "assets/20500766.jpeg")
     this.load.image("cookieMonster", "assets/baby-cookie-monster-512x512.png")
-
   }
 
   /**
