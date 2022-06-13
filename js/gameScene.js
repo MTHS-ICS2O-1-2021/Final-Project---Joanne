@@ -67,26 +67,38 @@ class GameScene extends Phaser.Scene {
     const keyDownObj = this.input.keyboard.addKey("DOWN")
 
     if (keyLeftObj.isDown === true) {
-      this.ship.x -= 15
-       if (this.ship.x < 0) {
-        this.ship.x = 0
+      this.cookieMonster.x -= 15
+       if (this.cookieMonster.x < 0) {
+        this.cookieMonster.x = 0
       }
     }
 
     if (keyRightObj.isDown === true) {
-      this.ship.x += 15
-      if (this.ship.x > 1920) {
-        this.ship.x = 1920
+      this.cookieMonster.x += 15
+      if (this.cookieMonster.x > 1920) {
+        this.cookieMonster.x = 1920
       }
     }
 
     if (keyUpObj.isDown === true) {
-      if (this.eatCookie === false) {
-        // eat cookie
-        this.eatCookie = true
+      this.cookieMonster.y -= 15
+      if (this.cookieMonster.y > 1920) {
+        this.cookieMonster.x = 1920
+      }
+    }
+
+    if (keyDownObj.isDown === true) {
+      this.cookieMonster.y += 15
+      if (this.cookieMonster.y > 1920) {
+        this.cookieMonster.y = 1920
+      }
+    }
+
+    if (keyUpObj.isDown === true) {
+      if (this.eatCookie === true) {
         const aNewCookie = this.physics.add.sprite(
-          this.ship.x,
-          this.ship.y,
+          this.cookieMonster.x,
+          this.cookieMonster.y,
           "cookie"
         )
         this.cookieGroup.add(aNewCookie)
