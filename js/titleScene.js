@@ -1,7 +1,5 @@
 /* global Phaser */
 
-/* global Phaser */
-
 // Copyright (c) 2022 Joanne Santhosh All rights reserved
 //
 // Created by: Joanne Santhosh
@@ -62,7 +60,12 @@ class TitleScene extends Phaser.Scene {
     this.titleSceneBackgroundImage.y = 1080 / 2
 
     this.titleSceneText = this.add
-      .text(1920 / 2, 1080 / 2, "Cookie Monster!", this.titleSceneTextStyle)
+      .text(
+        1920 / 2,
+        1080 / 2 + 350,
+        "Cookie Monster",
+        this.titleSceneTextStyle
+      )
       .setOrigin(0.5)
   }
 

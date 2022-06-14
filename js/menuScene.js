@@ -15,6 +15,9 @@ class MenuScene extends Phaser.Scene {
    */
   constructor() {
     super({ key: "menuScene" })
+
+    this.menuSceneBackgroundImage = null
+    this.startButton = null
   }
 
   /**
@@ -33,6 +36,11 @@ class MenuScene extends Phaser.Scene {
    */
   preload() {
     console.log("Menu Scene")
+    this.load.image("menuSceneBackground", "assets/images.jpeg")
+    this.load.image(
+      "startButton",
+      "assets/157-1579149_transparent-start-button-png-pixel-game-start-button.png"
+    )
   }
 
   /**
@@ -41,7 +49,15 @@ class MenuScene extends Phaser.Scene {
    * @param {object} data - Any data passed via ScenePlugin.add() or ScenePlugin.start().
    */
   create(data) {
-    // pass
+    this.menuSceneBackgroundImage = this.add
+      .sprite(0, 0, "menuSceneBackground")
+      .setScale(90)
+    this.menuSceneBackgroundImage.x = 1920 / 2
+    this.menuSceneBackgroundImage.y = 1080 / 2
+
+    this.startButton = this.add.sprite(1920 / 2, 1080 / 2 + 100, "startButton")
+    this.startButton.setInteractive({ userHandCursor: true })
+    this.startButton.on("pointerdown", () => this.clickButton())
   }
 
   /**
@@ -50,8 +66,13 @@ class MenuScene extends Phaser.Scene {
    *  @param {number} time - The current time.
    *  @param {number} delta - The delta time in ms since the last frame.
    */
-  update(time, delta) {
-    // pass
+  update(time, delta) {}
+
+  /**
+   * The code for the start button
+   */
+  clickButton() {
+    this.scene.start("gameScene")
   }
 }
 
