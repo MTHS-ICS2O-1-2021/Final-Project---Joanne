@@ -10,6 +10,17 @@
  * This class is the Game Scene.
  */
 class GameScene extends Phaser.Scene {
+  // create a cookie
+  createACookie() {
+    const cookieXLocation = Math.floor(Math.random() * 1920) + 1 // this will get a number between 1 and 1920
+    let cookieXVelocity = Math.floor(Math.random() * 50) + 1 // this will get a number between 1 and 50
+    cookieXVelocity *= Math.round(Math.random()) ? 1 : -1 // thiis will add minus sign in 50% of cases
+    const aCookie = this.physics.add.sprite(cookieXVelocity, -100, "cookie")
+    aCookie.body.velocity.y = 200
+    aCookie.body.velocity.x = cookieXVelocity
+    this.cookieGroup.add(aCookie)
+  }
+
   /**
    * This method is the construtor.
    */
@@ -40,6 +51,7 @@ class GameScene extends Phaser.Scene {
     // images
     this.load.image("gameBackground", "assets/20500766.jpeg")
     this.load.image("cookieMonster", "assets/image (1).png")
+    this.load.image("cookie", "assets/rsz_998110-middle-removebg-preview_2_24.png")
   }
 
   /**
@@ -56,6 +68,10 @@ class GameScene extends Phaser.Scene {
       1080 - 100,
       "cookieMonster"
     )
+    
+    // create cookies
+    this.cookieGroup = this.add.group()
+    this.createACookie()
   }
 
   /**
@@ -87,7 +103,7 @@ class GameScene extends Phaser.Scene {
     if (keyUpObj.isDown === true) {
       this.cookieMonster.y -= 15
       if (this.cookieMonster.y > 1920) {
-        this.cookieMonster.x = 1920
+        this.cookieMonster.y = 1920
       }
     }
 
@@ -105,7 +121,7 @@ class GameScene extends Phaser.Scene {
           this.cookieMonster.y,
           "cookie"
         )
-        this.cookieGroup.add(aNewCookie)
+        this.cookieGroup.add(aCookie)
       }
     }
 
