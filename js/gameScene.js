@@ -51,7 +51,10 @@ class GameScene extends Phaser.Scene {
     // images
     this.load.image("gameBackground", "assets/20500766.jpeg")
     this.load.image("cookieMonster", "assets/image (1).png")
-    this.load.image("cookie", "assets/rsz_998110-middle-removebg-preview_2_24.png")
+    this.load.image(
+      "cookie", 
+      "assets/rsz_998110-middle-removebg-preview_2_24.png"
+    )
   }
 
   /**
@@ -68,6 +71,7 @@ class GameScene extends Phaser.Scene {
       1080 - 100,
       "cookieMonster"
     )
+    
     
     // create cookies
     this.cookieGroup = this.add.group()
