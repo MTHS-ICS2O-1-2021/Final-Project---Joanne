@@ -55,6 +55,9 @@ class GameScene extends Phaser.Scene {
       "cookie", 
       "assets/rsz_998110-middle-removebg-preview_2_24.png"
     )
+
+    // sound
+    this.load.audio("crunch", "assets/crack-and-crunch-14891.mp3")
   }
 
   /**
@@ -74,6 +77,15 @@ class GameScene extends Phaser.Scene {
     // create cookies
     this.cookieGroup = this.add.group()
     this.createACookie()
+
+    // Collissions between cookie monster and cookies
+    this.physics.add.collider(this.cookieMonster, this.cookieGroup, function (cookieCollide, cookieMonsterCollide){
+      cookieCollide.destroy()
+      cookieMonsterCollide.destroy()
+      this.sound.play("crunch")
+      this.createACookie()
+      this.createACookie()
+    }.bind(this))
   }
 
   /**
@@ -115,31 +127,8 @@ class GameScene extends Phaser.Scene {
         this.cookieMonster.y = 1920
       }
     }
-
-    if (keyUpObj.isDown === true) {
-      if (this.eatCookie === true) {
-        const aNewCookie = this.physics.add.sprite(
-          this.cookieMonster.x,
-          this.cookieMonster.y,
-          "cookie"
-        )
-        this.cookieGroup.add(aCookie)
-      }
+    if (keySpaceObj.isUp === true) {
+       this.createACookie = false
     }
-
-    if (keyLeftObj.isUp === true) {
-      this.eatCookie = false
-    }
-    if (keyRightObj.isUp === true) {
-      this.eatCookie = false
-    }
-    if (keyUpObj.isUp === true) {
-      this.eatCookie = false
-    }
-    if (keyDownObj.isUp === true) {
-      this.eatCookie = false
-    }
-  }
-}
-
-export default GameScene
+    
+  export default GameScene
