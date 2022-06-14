@@ -54,8 +54,8 @@ class GameScene extends Phaser.Scene {
     this.load.image(
       "cookie", 
       "assets/rsz_998110-middle-removebg-preview_2_24.png"
-    )
-  }
+   )
+ }
 
   /**
    * Can be defined on your own Scenes.
@@ -71,7 +71,6 @@ class GameScene extends Phaser.Scene {
       1080 - 100,
       "cookieMonster"
     )
-    
     
     // create cookies
     this.cookieGroup = this.add.group()
