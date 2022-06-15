@@ -42,7 +42,6 @@ class GameScene extends Phaser.Scene {
     this.load.image("gameBackground", "assets/20500766.jpeg")
     this.load.image("cookieMonster", "assets/image (1).png")
     this.load.image(
-      
       "cookie", 
       "assets/rsz_998110-middle-removebg-preview_2_24.png"
     )
