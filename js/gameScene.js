@@ -73,7 +73,6 @@ class GameScene extends Phaser.Scene {
       this.createACookie()
     }.bind(this))
   }
-}
 
   update(time, delta) {
     const keyLeftObj = this.input.keyboard.addKey("LEFT")
