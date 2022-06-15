@@ -48,7 +48,10 @@ class GameScene extends Phaser.Scene {
     )
 
     // sound
-    this.load.audio('crunch', "assets/crack-and-crunch-14891-[AudioTrimmer.com].mp3")
+    this.load.audio(
+      "crunch",
+      "assets/crack-and-crunch-14891-[AudioTrimmer.com].mp3"
+    )
   }
 
   create(data) {
@@ -61,18 +64,22 @@ class GameScene extends Phaser.Scene {
       "cookieMonster"
     )
     
-    // create cookies
+     // create cookies
     this.cookieGroup = this.add.group()
     this.createACookie()
 
     // Collissions between cookie monster and cookies
-    this.physics.add.collider(this.cookieMonster, this.cookieGroup, function (cookieCollide, cookieMonsterCollide){
-      cookieMonsterCollide.destroy()
-      this.sound.play('crunch')
-      this.createACookie()
-      this.createACookie()
-    }.bind(this))
-  }
+    this.physics.add.collider(
+      this.cookieMonster,
+      this.cookieGroup,
+      function (cookieCollide, cookieMonsterCollide) {
+        cookieMonsterCollide.destroy()
+        this.sound.play('crunch')
+        this.createACookie()
+        this.createACookie()
+    }.bind(this)
+  )
+}
 
   update(time, delta) {
     const keyLeftObj = this.input.keyboard.addKey("LEFT")
