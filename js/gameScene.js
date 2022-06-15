@@ -10,7 +10,6 @@
  * This class is the Game Scene.
  */
 class GameScene extends Phaser.Scene {
-  
   // create a cookie
   createACookie() {
     const cookieXLocation = Math.floor(Math.random() * 1920) + 1 // this will get a number between 1 and 1920
@@ -64,7 +63,7 @@ class GameScene extends Phaser.Scene {
       "cookieMonster"
     )
     
-     // create cookies
+    // create cookies
     this.cookieGroup = this.add.group()
     this.createACookie()
 
@@ -77,9 +76,9 @@ class GameScene extends Phaser.Scene {
         this.sound.play('crunch')
         this.createACookie()
         this.createACookie()
-    }.bind(this)
-  )
-}
+      }.bind(this)
+    )
+  }
 
   update(time, delta) {
     const keyLeftObj = this.input.keyboard.addKey("LEFT")
@@ -116,5 +115,5 @@ class GameScene extends Phaser.Scene {
     }
   }
 }
-    
+
 export default GameScene
