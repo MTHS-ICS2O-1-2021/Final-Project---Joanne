@@ -48,7 +48,7 @@ class GameScene extends Phaser.Scene {
     )
 
     // sound
-    this.load.audio('crunch', "assets/crack-and-crunch-14891.mp3")
+    this.load.audio('crunch', "assets/crack-and-crunch-14891-[AudioTrimmer.com].mp3")
   }
 
   create(data) {
