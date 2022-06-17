@@ -108,6 +108,14 @@ class GameScene extends Phaser.Scene {
       1080 - 100,
       "cookieMonster"
     )
+
+    this.timerText = this.add.text(
+      10,
+      10,
+      "Timer: " + this.timer.toString(),
+      this.timerTextStyle
+    )
+    
     // create cookies
     this.cookieGroup = this.add.group()
     this.createACookie()
@@ -164,30 +172,6 @@ class GameScene extends Phaser.Scene {
         this.createARock()
       }.bind(this)
     )
-
-  /**
-   * add timer
-   */
-    function timer(){
-    var sec = 30;
-    var timer = setInterval(function(){
-        document.getElementById("safeTimerDisplay").innerHTML='00:'+ sec;
-        sec--;
-        if (sec < 0) {
-        clearInterval(timer);
-        this.gameOverText = this.add
-          .text(
-            1920 / 2,
-            1080 / 2,
-            "Game Over!\nClick to play again.",
-            this.gameOverTextStyle
-          )
-          .setOrigin(0.5)
-        this.gameOverText.setInteractive({ useHandCursor: true })
-        this.gameOverText.on("pointerdown", () => this.scene.start("gameScene"))
-        }
-    }, 1000);
-}
   }
 
   update(time, delta) {
