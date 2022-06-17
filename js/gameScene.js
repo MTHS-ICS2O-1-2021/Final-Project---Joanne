@@ -108,13 +108,6 @@ class GameScene extends Phaser.Scene {
       1080 - 100,
       "cookieMonster"
     )
-
-    this.timerText = this.add.text(
-      10,
-      10,
-      "Timer: " + this.timer.toString(),
-      this.timerTextStyle
-    )
     
     // create cookies
     this.cookieGroup = this.add.group()
