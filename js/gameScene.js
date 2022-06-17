@@ -52,7 +52,7 @@ class GameScene extends Phaser.Scene {
     this.gameOverTextStyle = {
       font: "65px Arial",
       fill: "#ff0000",
-      align: "center", 
+      align: "center",
     }
   }
 
@@ -71,13 +71,13 @@ class GameScene extends Phaser.Scene {
       "assets/rsz_998110-middle-removebg-preview_2_24.png"
     )
     this.load.image("rock", "assets/download_1_2_25-removebg-preview.png")
-    
+
     // sound
     this.load.audio(
       "crunch",
       "assets/crack-and-crunch-14891-[AudioTrimmer.com].mp3"
     )
-    
+
     this.load.audio(
       "explosion",
       "assets/76H365G-explosion-[AudioTrimmer.com].mp3"
