@@ -50,9 +50,9 @@ class GameScene extends Phaser.Scene {
 
     this.gameOverText = null
     this.gameOverTextStyle = {
-      font: '65px Arial',
-      fill: '#ff0000',
-      align: 'center' 
+      font: "65px Arial",
+      fill: "#ff0000",
+      align: "center", 
     }
   }
 
@@ -77,6 +77,7 @@ class GameScene extends Phaser.Scene {
       "crunch",
       "assets/crack-and-crunch-14891-[AudioTrimmer.com].mp3"
     )
+    
     this.load.audio(
       "explosion",
       "assets/76H365G-explosion-[AudioTrimmer.com].mp3"
