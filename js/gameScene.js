@@ -18,7 +18,7 @@ class GameScene extends Phaser.Scene {
     let cookieXVelocity = Math.floor(Math.random() * 50) + 1 // this will get a number between 1 and 50
     cookieXVelocity *= Math.round(Math.random()) ? 1 : -1 // thiis will add minus sign in 50% of cases
     const aCookie = this.physics.add.sprite(cookieXLocation, -100, "cookie")
-    aCookie.body.velocity.y = 200
+    aCookie.body.velocity.y = 400
     aCookie.body.velocity.x = cookieXVelocity
     this.cookieGroup.add(aCookie)
   }
@@ -31,7 +31,7 @@ class GameScene extends Phaser.Scene {
     let rockXVelocity = Math.floor(Math.random() * 50) + 1 // this will get a number between 1 and 50
     rockXVelocity *= Math.round(Math.random()) ? 1 : -1 // thiis will add minus sign in 50% of cases
     const aRock = this.physics.add.sprite(rockXLocation, -100, "rock")
-    aRock.body.velocity.y = 200
+    aRock.body.velocity.y = 400
     aRock.body.velocity.x = rockXVelocity
     this.rockGroup.add(aRock)
   }
@@ -66,7 +66,6 @@ class GameScene extends Phaser.Scene {
   init(data) {
     this.cameras.main.setBackgroundColor("ffffff")
   }
-
   preload() {
     console.log("Game Scene")
 
@@ -90,6 +89,9 @@ class GameScene extends Phaser.Scene {
     )
   }
 
+  /**
+   * settings
+   */
   create(data) {
     this.background = this.add.image(0, 0, "gameBackground").setScale(2.0)
     this.background.setOrigin(0, 0)
@@ -150,7 +152,9 @@ class GameScene extends Phaser.Scene {
       }.bind(this)
     )
 
-    // Create more rocks
+  /**
+   * create more rocks
+   */
     this.physics.add.collider(
       this.cookieMonster,
       this.cookieGroup,
