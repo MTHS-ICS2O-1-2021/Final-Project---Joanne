@@ -10,7 +10,9 @@
  * This class is the Game Scene.
  */
 class GameScene extends Phaser.Scene {
-  // create a cookie
+/**
+ * Create cookies
+ */
   createACookie() {
     const cookieXLocation = Math.floor(Math.random() * 1920) + 1 // this will get a number between 1 and 1920
     let cookieXVelocity = Math.floor(Math.random() * 50) + 1 // this will get a number between 1 and 50
@@ -21,7 +23,9 @@ class GameScene extends Phaser.Scene {
     this.cookieGroup.add(aCookie)
   }
 
-  // create a rock
+/**
+ * Create rocks
+ */
   createARock() {
     const rockXLocation = Math.floor(Math.random() * 1920) + 1 // this will get a number between 1 and 1920
     let rockXVelocity = Math.floor(Math.random() * 50) + 1 // this will get a number between 1 and 50
@@ -56,6 +60,9 @@ class GameScene extends Phaser.Scene {
     }
   }
 
+/**
+ * background and audio
+ */
   init(data) {
     this.cameras.main.setBackgroundColor("ffffff")
   }
@@ -77,7 +84,6 @@ class GameScene extends Phaser.Scene {
       "crunch",
       "assets/crack-and-crunch-14891-[AudioTrimmer.com].mp3"
     )
-
     this.load.audio(
       "explosion",
       "assets/76H365G-explosion-[AudioTrimmer.com].mp3"
