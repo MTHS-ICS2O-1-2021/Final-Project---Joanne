@@ -30,7 +30,7 @@ class GameScene extends Phaser.Scene {
     aRock.body.velocity.y = 200
     aRock.body.velocity.x = rockXVelocity
     this.rockGroup.add(aRock)
-    }
+  }
 
   /**
    * This method is the construtor.
@@ -42,11 +42,18 @@ class GameScene extends Phaser.Scene {
     this.cookieMonster = null
     this.score = 0
     this.scoreText = null
-    this.scoreTextStyle = {font: "65px Ariel", fill: "#0000FF", align: "center",}
+    this.scoreTextStyle = {
+      font: "65px Ariel",
+      fill: "#0000FF",
+      align: "center",
+    }
 
     this.gameOverText = null
-    this.gameOverTextStyle = { font: '65px Arial', fill: '#ff0000', align: 'center' }
-
+    this.gameOverTextStyle = {
+      font: '65px Arial',
+      fill: '#ff0000',
+      align: 'center' 
+    }
   }
 
   init(data) {
@@ -61,23 +68,31 @@ class GameScene extends Phaser.Scene {
     this.load.image("cookieMonster", "assets/image (1).png")
     this.load.image(
       "cookie",
-      "assets/rsz_998110-middle-removebg-preview_2_24.png");
+      "assets/rsz_998110-middle-removebg-preview_2_24.png"
+    )
     this.load.image("rock", "assets/download_1_2_25-removebg-preview.png")
     
-
     // sound
     this.load.audio(
       "crunch",
       "assets/crack-and-crunch-14891-[AudioTrimmer.com].mp3"
     )
-    this.load.audio("explosion", "assets/76H365G-explosion-[AudioTrimmer.com].mp3")
+    this.load.audio(
+      "explosion",
+      "assets/76H365G-explosion-[AudioTrimmer.com].mp3"
+    )
   }
 
   create(data) {
     this.background = this.add.image(0, 0, "gameBackground").setScale(2.0)
     this.background.setOrigin(0, 0)
 
-    this.scoreText = this.add.text(10, 10, 'Score: ' + this.score.toString(), this.scoreTextStyle)
+    this.scoreText = this.add.text(
+      10,
+      10,
+      "Score: " + this.score.toString(),
+      this.scoreTextStyle
+    )
 
     this.cookieMonster = this.physics.add.sprite(
       1920 / 2,
@@ -100,7 +115,7 @@ class GameScene extends Phaser.Scene {
         cookieMonsterCollide.destroy()
         this.sound.play("crunch")
         this.score = this.score + 1
-        this.scoreText.setText('Score: ' + this.score.toString())
+        this.scoreText.setText("Score: " + this.score.toString())
         this.createACookie()
         this.createACookie()
       }.bind(this)
@@ -115,7 +130,14 @@ class GameScene extends Phaser.Scene {
         this.physics.pause()
         rockCollide.destroy()
         cookieMonsterCollide.destroy()
-        this.gameOverText = this.add.text(1920 / 2, 1080 / 2, 'Game Over!\nClick to play again.',       this.gameOverTextStyle).setOrigin(0.5)
+        this.gameOverText = this.add
+          .text(
+            1920 / 2,
+            1080 / 2,
+            "Game Over!\nClick to play again.",
+            this.gameOverTextStyle
+          )
+          .setOrigin(0.5)
         this.gameOverText.setInteractive({ useHandCursor: true })
         this.gameOverText.on("pointerdown", () => this.scene.start("gameScene"))
       }.bind(this)
