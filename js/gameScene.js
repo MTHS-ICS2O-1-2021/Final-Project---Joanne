@@ -166,9 +166,9 @@ class GameScene extends Phaser.Scene {
         cookieMonsterCollide.destroy()
         this.createARock()
         this.createARock()
-    /**
-     * bind
-     */
+        /**
+         * bind
+         */
       }.bind(this)
     )
   }
