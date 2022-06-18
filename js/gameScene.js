@@ -109,6 +109,7 @@ class GameScene extends Phaser.Scene {
       "cookieMonster"
     )
     
+    
     // create cookies
     this.cookieGroup = this.add.group()
     this.createACookie()
