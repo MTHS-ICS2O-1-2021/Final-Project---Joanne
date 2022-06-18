@@ -66,6 +66,10 @@ class GameScene extends Phaser.Scene {
   init(data) {
     this.cameras.main.setBackgroundColor("ffffff")
   }
+
+  /**
+   * game scene content
+   */
   preload() {
     console.log("Game Scene")
 
@@ -162,6 +166,9 @@ class GameScene extends Phaser.Scene {
         cookieMonsterCollide.destroy()
         this.createARock()
         this.createARock()
+    /**
+     * bind
+     */
       }.bind(this)
     )
   }
