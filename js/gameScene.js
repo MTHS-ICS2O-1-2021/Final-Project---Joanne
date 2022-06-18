@@ -173,6 +173,9 @@ class GameScene extends Phaser.Scene {
     )
   }
 
+  /**
+   * keyboard command
+   */
   update(time, delta) {
     const keyLeftObj = this.input.keyboard.addKey("LEFT")
     const keyRightObj = this.input.keyboard.addKey("RIGHT")
