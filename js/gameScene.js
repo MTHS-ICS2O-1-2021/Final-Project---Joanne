@@ -58,6 +58,14 @@ class GameScene extends Phaser.Scene {
       fill: "#ff0000",
       align: "center",
     }
+
+    this.timer = 30
+    this.timerText = null
+    this.timerTextStyle = {
+      font: "65px Ariel",
+      fill: "#0000FF",
+      align: "center",
+    }
   }
 
   /**
@@ -74,7 +82,7 @@ class GameScene extends Phaser.Scene {
     console.log("Game Scene")
 
     // images
-    this.load.image("gameBackground", "assets/20500766.jpeg")
+    this.load.image("gameBackground", "assets/37-affinity-game-background-600 (1).jpg")
     this.load.image("cookieMonster", "assets/image (1).png")
     this.load.image(
       "cookie",
